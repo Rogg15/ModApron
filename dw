@@ -1,3 +1,12 @@
+--[[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua"))()
+while wait(5) do 
+
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Please Shiny Homuru", 'All')
+
+end
+]]
+
 --updatefix
 local version = "v2.0.0b31"
 
@@ -32,15 +41,15 @@ mt.__namecall = protect(function(self, ...)
     end
     return old(self, ...)
 end)
-hookfunction(Players.LocalPlayer.Kick,protect(function() wait(9e9) end))
 
-notify('Client Antikick','Client anti kick is now active (only effective on localscript kick)')
+
 
 setfpscap(35)
 settings().Rendering.QualityLevel = 1	
 game.Lighting.GlobalShadows = false
 sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 
+repeat wait() until game:IsLoaded() wait(2)
 local ScreenGui = Instance.new("ScreenGui")
 local Ping = Instance.new("TextLabel")
 
