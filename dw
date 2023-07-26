@@ -1,37 +1,16 @@
---[[
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua"))()
-while wait(5) do 
-
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Please Shiny Homuru", 'All')
-
-end
-]]
-
 --updatefix
 local version = "v2.0.0b31"
 
 ---// Loading Section \\---
-repeat  task.wait() until game:IsLoaded()
-if game.PlaceId == 8304191830 then
-    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
-    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
-else
-    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
-    game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
-    repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
-end
+repeat task.wait() until game:IsLoaded()
 
 local mt = getrawmetatable(game)
 local old = mt.__namecall
 local protect = newcclosure or protect_function
 
 if not protect then
-    notify("Incompatible Exploit Warning", "Your exploit does not support protection against stack trace errors, resulting to fallback function")
     protect = function(f) return f end
 end
-
 setreadonly(mt, false)
 mt.__namecall = protect(function(self, ...)
     local method = getnamecallmethod()
@@ -43,13 +22,29 @@ mt.__namecall = protect(function(self, ...)
 end)
 
 
-
 setfpscap(35)
 settings().Rendering.QualityLevel = 1	
 game.Lighting.GlobalShadows = false
 sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 
-repeat wait() until game:IsLoaded() wait(2)
+
+
+
+
+
+
+
+if game.PlaceId == 8304191830 then
+    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
+    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
+    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
+else
+    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+    repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
+end
+
 local ScreenGui = Instance.new("ScreenGui")
 local Ping = Instance.new("TextLabel")
 
@@ -3297,10 +3292,10 @@ function autoload()
         local exec = tostring(identifyexecutor())
         if exec == "Synapse X" and Settings.AutoLoadScript then
 
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
 
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
+            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
         end
     end)
 end
@@ -3310,7 +3305,7 @@ if Settings.AutoLoadScript then
 end
 
 function autoload2()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()
 end
 
 
@@ -7945,6 +7940,6 @@ elseif game.PlaceId ~= 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild("_terrain")
     checkInterNet()
 end
---Antikick
+
 --Auto Load
---setfpscap
+
