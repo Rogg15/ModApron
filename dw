@@ -27,7 +27,22 @@ settings().Rendering.QualityLevel = 1
 game.Lighting.GlobalShadows = false
 sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 
+if not game:IsLoaded() then
+game.Loaded:Wait()
+end
+game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)
+if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.MessageArea:FindFirstChild("ErrorFrame") then
+    
+        local GameId = "8304191830" 
 
+        local FromChar = game.Players.LocalPlayer
+        if FromChar then
+            local TeleService = game:GetService("TeleportService")
+            TeleService:Teleport(GameId,FromChar)
+        end
+
+end
+end)
 
 
 
