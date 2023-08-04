@@ -1732,18 +1732,18 @@ if game.workspace._map:FindFirstChild("_secretthing") then
 
         local args = {
             [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
-            [2] = CFrame.new(-80.28854370117188, 212.9611053466797, -234.3217315673828, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-74.92756652832031, 212.9611053466797, -224.1019744873047, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-
+        
         local args = {
             [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
-            [2] = CFrame.new(-77.73328399658203, 212.9611053466797, -231.87332153320312, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-79.06838989257812, 212.9611053466797, -227.3958282470703, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
+
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
 
@@ -1758,7 +1758,7 @@ if game.workspace._map:FindFirstChild("_secretthing") then
 
         local args = {
             [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
-            [2] = CFrame.new(-73.34163665771484, 212.9611053466797, -226.12420654296875, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-82.42399597167969, 212.9611053466797, -231.31900024414062, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
