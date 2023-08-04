@@ -1,6 +1,5 @@
 --updatefix
---Modded by Rou
-local version = "v15.5"
+local version = "v2.0.0b31"
 
 ---// Loading Section \\---
 repeat task.wait() until game:IsLoaded()
@@ -48,7 +47,7 @@ if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.Me
 end
 end)
 ]]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
+
 
 
 
@@ -7978,11 +7977,11 @@ if game.PlaceId == 8304191830 then
     game:GetService("ReplicatedStorage").packages.assets["ui_sfx"].error_old.Volume = 0
     game.Players.LocalPlayer.PlayerGui.MessageGui.Enabled = false --disables the annoying error messages 
 end
-warn("Display Error Hider!!!")
-warn("Arpon Anti-AFK Loaded!!!")
-warn("Arpon Hider Name Loaded!!!")
-warn("Arpon AA v2 Loaded!!!")
-warn("All Loaded !!!")
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
+
+
 
 if game.PlaceId == 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild(game.Players.LocalPlayer.Name)
