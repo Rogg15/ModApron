@@ -1817,3 +1817,275 @@ if game.workspace._map:FindFirstChild("_secretthing") then
 
 end
 
+
+--Puppet✅
+if game.workspace._map:FindFirstChild("_secret") then
+
+    game:GetService('StarterGui'):SetCore("SendNotification", {
+        Title = game.Players.LocalPlayer.Name;
+        Text = 'Puppet Loaded';
+        Icon = "rbxassetid://9870555100";
+        Duration = 334;
+    });
+
+    --Ekko/homu
+    if game.Players.LocalPlayer.UserId == 1654315397 then
+     
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 2
+
+        local args = {
+            [1] = "{08368613-a187-4ec3-b203-bf0323336f38}",
+            [2] = CFrame.new(-22.537269592285156, 2.600001811981201, -172.28900146484375, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
+
+        local args = {
+            [1] = "{08368613-a187-4ec3-b203-bf0323336f38}",
+            [2] = CFrame.new(-24.792091369628906, 2.600001811981201, -171.31814575195312, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        local args = {
+            [1] = "{08368613-a187-4ec3-b203-bf0323336f38}",
+            [2] = CFrame.new(-24.51361846923828, 2.600001811981201, -173.51126098632812, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 5  
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 6
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 13
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 14
+        upgHomu()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 15
+        upgHomu()
+   
+    end
+    -- second iii/healtclif
+    if game.Players.LocalPlayer.UserId == 1088310350 then
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 2
+
+        local args = {
+            [1] = "{f236d477-04d6-4691-b3a3-bc137be8a831}",
+            [2] = CFrame.new(-20.388668060302734, 2.600001811981201, -170.7008514404297, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+              
+        local args = {
+            [1] = "{f236d477-04d6-4691-b3a3-bc137be8a831}",
+            [2] = CFrame.new(-18.174396514892578, 2.600001811981201, -169.4904022216797, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
+
+        local args = {
+            [1] = "{f236d477-04d6-4691-b3a3-bc137be8a831}",
+            [2] = CFrame.new(-20.767501831054688, 2.600001811981201, -167.93524169921875, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
+
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 5
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 6
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 13
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 14
+        Cliff()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 15
+        Cliff()
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("done", 'All')   
+    end
+
+    --1lives/tengen
+    if game.Players.LocalPlayer.UserId == 3761928060 then
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 2
+
+        local args = {
+            [1] = "{277a5790-1ccf-48de-bb65-84c262569726}",
+            [2] = CFrame.new(-22.481338500976562, 2.600001811981201, -175.9355926513672, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
+
+        local args = {
+            [1] = "{277a5790-1ccf-48de-bb65-84c262569726}",
+            [2] = CFrame.new(-24.70990753173828, 2.6000022888183594, -179.27932739257812, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
+        
+        local args = {
+            [1] = "{277a5790-1ccf-48de-bb65-84c262569726}",
+            [2] = CFrame.new(-24.662620544433594, 2.6000022888183594, -176.8468017578125, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 5
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 6
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 13
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 14
+        tegen()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 15
+        tegen()
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("done", 'All')
+    end
+    --Main/ussop
+    if game.Players.LocalPlayer.UserId == 1821780137 then
+               
+
+        local args = {
+            [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
+            [2] = CFrame.new(-11.810989379882812, 2.600001335144043, -162.69583129882812, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 2
+
+        local args = {
+            [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
+            [2] = CFrame.new(-36.762359619140625, 2.6000008583068848, -151.31134033203125, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+        local args = {
+            [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
+            [2] = CFrame.new(-40.46037292480469, 2.6000008583068848, -150.4557342529297, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
+
+        local args = {
+            [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
+            [2] = CFrame.new(-16.516429901123047, 2.600001335144043, -162.5421600341797, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
+
+        local args = {
+            [1] = "{38c534d8-a915-432f-abdf-5506f3ce6c1f}",
+            [2] = CFrame.new(-33.59790802001953, 2.6000008583068848, -150.7877960205078, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 5
+
+        local args = {
+            [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
+            [2] = CFrame.new(-20.76183319091797, 2.600001335144043, -161.8826904296875, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 6
+    
+        local args = {
+            [1] = "{27360a6e-9377-490d-9ef4-d0c6fe58a755}",
+            [2] = CFrame.new(-21.424057006835938, 2.6000027656555176, -193.2032470703125, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
+
+        local args = {
+            [1] = "{27360a6e-9377-490d-9ef4-d0c6fe58a755}",
+            [2] = CFrame.new(-28.61199188232422, 2.600001335144043, -158.9420166015625, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+        
+
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 11
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 13
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 14
+        ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 15
+        ussop()
+
+
+    end
+
+
+
+
+end
+
+
