@@ -1,5 +1,6 @@
 --updatefix
-local version = "v2.0.0b31"
+--Modded by Rou
+local version = "v15.5"
 
 ---// Loading Section \\---
 repeat task.wait() until game:IsLoaded()
@@ -30,6 +31,9 @@ sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 if not game:IsLoaded() then
 game.Loaded:Wait()
 end
+
+--[[
+
 game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(Kick)
 if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.MessageArea:FindFirstChild("ErrorFrame") then
     
@@ -43,8 +47,8 @@ if Kick.Name == 'ErrorPrompt' and Kick:FindFirstChild('MessageArea') and Kick.Me
 
 end
 end)
-
-
+]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
 
 
 
@@ -1034,7 +1038,7 @@ local function WorldSec()
             storylist = {"Storm Hideout","West City", "Infinity Train", "Shiganshinu District - Raid","Hiddel Sand Village - Raid", "Freezo's Invasion", "Entertainment District", 
             "Hero City (Hero Slayer)", "Marine's Ford (Buddha)"}
         elseif Settings.WorldCategory == "Portals" then
-            storylist = {"Alien Portals","Zeldris Portals","Demon Portals","Dressrosa Portals","Madoka Portals","The Eclipse"}
+            storylist = {"Alien Portals","Zeldris Portals","Demon Portals","Dressrosa Portals","Madoka Portals","The Eclipse","Summer"}
         elseif Settings.WorldCategory == "Dungeon" then
             storylist = {"Cursed Womb","Crused Parade","Anniversary Island"}    
         elseif Settings.WorldCategory == "Secret Portals" then
@@ -1133,6 +1137,8 @@ local function WorldSec()
             levellist = {"portal_item__dressrosa"}
         elseif level == "Madoka Portals" then
             levellist = {"portal_item__madoka"}
+        elseif level == "Summer" then
+            levellist = {"portal_summer"}
         elseif level == "The Eclipse" then
             levellist = {"portal_item__eclipse"}
         ---///Dungeon\\\---    updatefix
@@ -3488,6 +3494,16 @@ function getMadokaPortals()
     return portals
 end
 
+function getSummerPortals()
+    local portals = {}
+    for _, item in pairs(get_inventory_items_unique_items()) do
+        if item["item_id"] == "portal_item__summer" then
+            table.insert(portals, item)
+        end
+    end
+    return portals
+end
+
 function getberserkPortals()
     local portals = {}
     for _, item in pairs(get_inventory_items_unique_items()) do
@@ -3617,6 +3633,11 @@ function GetPlayerPortalUse(level)
         PortalName = "The Eclipse Secret Portals farming"
         PortalUUID = GetPortals("portal_item__femto")[1]["uuid"]
         PortalPlayer = GetPlayerPortal()
+
+    elseif level == "portal_summer" then
+        PortalName = "The Eclipse Secret Portals farming"
+        PortalUUID = GetPortals("portal_summer")[1]["uuid"]
+        PortalPlayer = GetPlayerPortal()
     ------------------------------
     -- [[ Portal Event Portal ]] --
 
@@ -3636,7 +3657,22 @@ function GetPlayerPortalUse(level)
             end
         end
     end
+    
+    elseif level == "portal_summer" then
+        local PortalEvent = GetPortals("portal_summer")
+        for i,v in pairs(PortalEvent) do
+            if v["_unique_item_data"]["_unique_portal_data"]["portal_depth"] <= Settings.SelectedTier then
+            if v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge and v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge2
+            and v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge3 then
+                PortalEventUse = v
 
+                PortalName = "Summer farming"
+                PortalUUID = PortalEventUse["uuid"]
+                PortalPlayer = GetPlayerPortal()
+                break
+            end
+        end
+    end
 
 end
     return {PortalName,PortalUUID,PortalPlayer}
@@ -7957,4 +7993,4 @@ elseif game.PlaceId ~= 8304191830 then
 end
 
 --Auto Load
-
+--Portals
