@@ -1,6 +1,12 @@
 --updatefix
 local version = "v2.0.0b31"
 
+
+if not game:IsLoaded() then
+game.Loaded:Wait()
+end
+
+
 ---// Loading Section \\---
 repeat task.wait() until game:IsLoaded()
 
@@ -27,9 +33,7 @@ settings().Rendering.QualityLevel = 1
 game.Lighting.GlobalShadows = false
 sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 
-if not game:IsLoaded() then
-game.Loaded:Wait()
-end
+
 
 --[[
 
@@ -345,16 +349,16 @@ function webhook()
 					["thumbnail"] = {
 						['url'] = thumbnails_avatar.data[1].imageUrl,
 					},
-					["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors : 🎮 "..exec.." 🎮 ",
+					["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**\nExecutors :  "..exec.."  ",
 					["color"] = 110335,
 					["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
 					['footer'] = {
-						['text'] = "// Made by HOLYSHz", 
-						['icon_url'] = "https://yt3.ggpht.com/mApbVVD8mT92f50OJuTObnBbc3j7nDCXMJFBk2SCDpSPcaoH9DB9rxVpJhsB5SxAQo1UN2GzyA=s48-c-k-c0x00ffffff-no-rj"
+						['text'] = "Modded", 
+						['icon_url'] = ""
 					},
                     ["fields"] = {
                         {
-                            ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
+                            ["name"] ="Status :",
                             ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Gold : "..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : ".. tostring(Count_Portal_list) .." 🌀```",
                         },
                         {
@@ -443,7 +447,7 @@ function BabyWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
+                        ["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
@@ -526,7 +530,7 @@ function SpecialSummonSniperWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
+                        ["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
@@ -608,7 +612,7 @@ function StandardSummonSniperWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
+                        ["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
@@ -674,7 +678,7 @@ function ShopSniperWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
+                        ["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
@@ -2932,10 +2936,10 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(30)
+                setfpscap(25)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(1000)
+                setfpscap(35)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
@@ -5516,7 +5520,7 @@ function FPSBOOST()
             LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
         },
         Images = {
-            Invisible = false, -- Invisible Images
+            Invisible = true, -- Invisible Images
             LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
             Destroy = false, -- Destroy Images
         },
@@ -5793,7 +5797,7 @@ function FPSBOOST()
         if _G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"]) then
             if setfpscap then
                 if type(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])) == "string" or type(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])) == "number" then
-                    setfpscap(tonumber(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
+                    --setfpscap(tonumber(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
 
                     if _G.ConsoleLogs then
                         warn("FPS Capped to " .. tostring(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
@@ -7992,4 +7996,4 @@ elseif game.PlaceId ~= 8304191830 then
 end
 
 --Auto Load
---Portals
+--low cpu
