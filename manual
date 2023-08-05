@@ -1545,7 +1545,7 @@ if game.workspace._map:FindFirstChild("Capybara") then
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
         ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 10
-        ussop(0)
+        ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 11
         ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
