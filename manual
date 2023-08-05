@@ -62,7 +62,34 @@ end
 
 repeat task.wait() until game:GetService("Players").LocalPlayer._stats.resource.Value >= 550
 
+game:GetService "RunService".RenderStepped:Connect(function()
 
+    repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
+    if game.workspace._is_last_wave.Value == false
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 1500 then 
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 2500 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 4000 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 6500 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 8000 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 10000 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 20000 then
+            ussop()
+        end
+    end
+    
+end)
 
 --Antkindom✅
 if game.workspace:FindFirstChild("Embers") then
@@ -973,7 +1000,7 @@ if game.workspace._map:FindFirstChild("Dust") then
 
 end
 
---ShiganshuDistric✅
+--ShiganshuDistric🟨
 if game.workspace._map:FindFirstChild("hq_new") then 
 
 
@@ -1438,7 +1465,7 @@ if game.workspace._map:FindFirstChild("Capybara") then
         tegen()
         game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("done", 'All')
     end
-    --Main/Mk
+    --Main/ussop
     if game.Players.LocalPlayer.UserId == 1821780137 then
 
     
@@ -1468,8 +1495,6 @@ if game.workspace._map:FindFirstChild("Capybara") then
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
 
-
-
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
 
         local args = {
@@ -1478,19 +1503,6 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 1500 then 
-        ussop()
-        end
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 2500 then
-        ussop()
-        end
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 4000 then
-        ussop()
-        end
-
-
-
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
 
@@ -1500,11 +1512,6 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 6500
-        ussop()
-        end
-
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 5
 
@@ -1524,13 +1531,6 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 8000 then
-        ussop()
-        end
-        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 10000 then
-        ussop()
-        end
 
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
         
@@ -1540,6 +1540,7 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
         ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
