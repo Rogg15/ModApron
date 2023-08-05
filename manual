@@ -1467,7 +1467,8 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
+
+
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 3
 
@@ -1478,6 +1479,18 @@ if game.workspace._map:FindFirstChild("Capybara") then
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
         
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 1500 then 
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 2500 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 4000 then
+        ussop()
+        end
+
+
+
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
 
@@ -1487,7 +1500,11 @@ if game.workspace._map:FindFirstChild("Capybara") then
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
+
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 6500
+        ussop()
+        end
+
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 5
 
@@ -1508,22 +1525,27 @@ if game.workspace._map:FindFirstChild("Capybara") then
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
         
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 8000 then
+        ussop()
+        end
+        if game:GetService("Players").LocalPlayer._stats.resource.Value >= 10000 then
+        ussop()
+        end
 
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 7
-
+        
         local args = {
             [1] = "{27360a6e-9377-490d-9ef4-d0c6fe58a755}",
             [2] = CFrame.new(-302.15374755859375, 361.2119445800781, 1431.0462646484375, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-        
-        
-
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 8
         ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 9
         ussop()
+        repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 10
+        ussop(0)
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 11
         ussop()
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 12
