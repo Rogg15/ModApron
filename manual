@@ -1446,12 +1446,11 @@ if game.workspace._map:FindFirstChild("Capybara") then
 
         local args = {
             [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
-            [2] = CFrame.new(-296.57366943359375, 361.2119445800781, 1447.156982421875, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-297.333984375, 361.2119445800781, 1450.745361328125, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
-
+        
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
-
-
+        
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 2
 
@@ -1474,12 +1473,11 @@ if game.workspace._map:FindFirstChild("Capybara") then
 
         local args = {
             [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
-            [2] = CFrame.new(-298.9134216308594, 361.2119445800781, 1455.009765625, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-295.5362243652344, 361.2119445800781, 1453.9219970703125, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
         
-
 
         repeat task.wait() until game:GetService("Workspace")["_wave_num"].Value >= 4
 
@@ -1495,10 +1493,11 @@ if game.workspace._map:FindFirstChild("Capybara") then
 
         local args = {
             [1] = "{c6efa024-02d1-464b-81c4-1aef9cd509ca}",
-            [2] = CFrame.new(-298.1696472167969, 361.2119445800781, 1447.82958984375, 1, 0, -0, -0, 1, -0, 0, 0, 1)
+            [2] = CFrame.new(-299.5890808105469, 361.2119445800781, 1448.0023193359375, 1, 0, -0, -0, 1, -0, 0, 0, 1)
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("endpoints"):WaitForChild("client_to_server"):WaitForChild("spawn_unit"):InvokeServer(unpack(args))
+
         
         repeat task.wait()until game:GetService("Workspace")["_wave_num"].Value >= 6
     
