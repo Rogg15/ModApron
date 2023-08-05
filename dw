@@ -1,5 +1,5 @@
 --updatefix
-local version = "v2.16"
+local version = "v2.0.0b31"
 
 
 if not game:IsLoaded() then
@@ -347,6 +347,8 @@ function webhook()
 		TextDropLabel = "Not Have Items Drops"
 	end
     
+
+
     local data = {
         ["content"] = "",
 			["username"] = "Anime Adventures V2",
@@ -385,6 +387,10 @@ function webhook()
                             ["name"] ="Items Drop :",
                             ["value"] = "\n" .. TextDropLabel .. "",
                             ["inline"] = false 
+                        },
+                        {
+                            ["name"] ="Alts Status",
+                            ["value"] = "\nSxzR4 SP"..tostring(comma_value(game:GetService("Players").SxzR4._stats._resourceSummerPearls)).." \nflf SP : "..tostring(comma_value(game:GetService("Players").flfgyhg5iwe._stats._resourceSummerPearls)).." \nFiF SP : "..tostring(comma_value(game:GetService("Players").fIfgyhg5iwe._stats._resourceSummerPearls.Value))..  "",
                         }
                     }
                     }
