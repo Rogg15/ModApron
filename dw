@@ -34,6 +34,18 @@ game.Lighting.GlobalShadows = false
 sethiddenproperty(game.Lighting, "Technology", "Compatibility")
 
 
+local ui = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("FinityUI")
+if ui then
+    ui:Destroy()
+end
+
+local ms = game:GetService("CoreGui"):FindFirstChild("Wifi")
+if ms then
+    ms:Destroy()
+end
+
+
+
 
 --[[
 
@@ -70,10 +82,9 @@ end
 local ScreenGui = Instance.new("ScreenGui")
 local Ping = Instance.new("TextLabel")
 
---Properties:
-
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Name = "Wifi"
 
 Ping.Name = "Ping"
 Ping.Parent = ScreenGui
@@ -343,32 +354,32 @@ function webhook()
 			["embeds"] = {
 				{
 					["author"] = {
-						["name"] = "Anime Adventures |  Results ✔️",
+						["name"] = "Anime Adventures |  Results ",
 						["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
 					},
 					["thumbnail"] = {
 						['url'] = thumbnails_avatar.data[1].imageUrl,
 					},
-					["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.."**\nExecutors :  "..exec.."  ",
+					["description"] = " Player Name : **"..game:GetService("Players").LocalPlayer.Name.." **\nExecutors :  "..exec.."  ",
 					["color"] = 110335,
 					["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
 					['footer'] = {
-						['text'] = "Modded", 
-						['icon_url'] = ""
+						['text'] = "// Modded", 
+						['icon_url'] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
 					},
                     ["fields"] = {
                         {
                             ["name"] ="Status :",
-                            ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Gold : "..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : ".. tostring(Count_Portal_list) .." 🌀```",
+                            ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " \nCurrent Gold : "..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " \nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " \nCurrent Trophies : "..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " \nCurrent Portal : ".. tostring(Count_Portal_list) .." ```",
                         },
                         {
                             ["name"] ="Results :",
-                            ["value"] = " ```ini\nWorld : "..mapname.. " 🌏\nMap : "..world.. " 🗺️\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛\nAll Kill Count : " ..tostring(comma_value(game.Players.LocalPlayer._stats.kills.Value)).. " ⚔️\nDMG Deal : " ..tostring(comma_value(game.Players.LocalPlayer._stats.damage_dealt.Value)).."⚔️```",
+                            ["value"] = " ```ini\nWorld : "..mapname.. " \nMap : "..world.. " \nResults : "..result.. " \nWave End : " ..tostring(waves[2]).." \nTime : " ..tostring(ttime[2]).." \nAll Kill Count : " ..tostring(comma_value(game.Players.LocalPlayer._stats.kills.Value)).. " \nDMG Deal : " ..tostring(comma_value(game.Players.LocalPlayer._stats.damage_dealt.Value)).."```",
                             ["inline"] = true
                         },
                         {
                             ["name"] ="Rewards :",
-                            ["value"] = "```ini\n" ..comma_value(gold).." Gold 💰\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n"..trophy.." Trophy 🏆```",
+                            ["value"] = "```ini\n" ..comma_value(gold).." Gold \n"..comma_value(gems).." Gems \n"..comma_value(xp[1]).." XP \n"..trophy.." Trophy ```",
                         },
                        {
                             ["name"] ="Items Drop :",
@@ -696,13 +707,13 @@ function ShopSniperWebhook()
             if item["gem_cost"] then
                 table.insert(data["embeds"][1]["fields"], {
                     ["name"] = "```" .. item["id"].."```",
-                    ["value"] = "```" .. item["gem_cost"] .. " 💎```",
+                    ["value"] = "```" .. item["gem_cost"] .. " ```",
                     ["inline"] = true
                 })
             else
                 table.insert(data["embeds"][1]["fields"], {
                     ["name"] = "```" .. item["id"].. " ```",
-                    ["value"] = "```" .. item["gold_cost"] .. " 💰```",
+                    ["value"] = "```" .. item["gold_cost"] .. " ```",
                     ["inline"] = true
                 })
             end
@@ -739,22 +750,22 @@ local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "[Arpon V2] Anime Adventures "..version.." - "..exec)
 Window.ChangeToggleKey(Enum.KeyCode.P)
 
-local Home = Window:Category("🏠 Home")
+local Home = Window:Category(" Home")
 local Developers = Home:Sector("Anime Adventures")
 local asdasd = Home:Sector(" ")
-local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
+local UIUPDT = Home:Sector("Challenge Config ")
 
 
-local Farm = Window:Category("🤖 Auto Farm")
-local SelectUnits = Farm:Sector("🧙‍ Select Units")
-local SelectWorld = Farm:Sector("🌏 Select World")
-local UnitPosition = Farm:Sector("🧙 Select Unit Position")
-local castleconfig = Farm:Sector("🏯 Infinity Castle 🏯")
-local AutoFarmConfig = Farm:Sector("⚙️ Auto Farm Config")
-local ChallengeConfig = Farm:Sector("⌛ Challenge Config")
+local Farm = Window:Category(" Auto Farm")
+local SelectUnits = Farm:Sector("Select Units")
+local SelectWorld = Farm:Sector("Select World")
+local UnitPosition = Farm:Sector("Select Unit Position")
+local castleconfig = Farm:Sector("Infinity Castle ")
+local AutoFarmConfig = Farm:Sector("Auto Farm Config")
+local ChallengeConfig = Farm:Sector("Challenge Config")
 
 
-local UC = Window:Category("🧙 Unit Config")
+local UC = Window:Category(" Unit Config")
 local NDY = UC:Sector("Beta Unit Config ")
 local NDY2 = UC:Sector(" ")
 local emptyxx = UC:Sector(" ")
@@ -767,7 +778,7 @@ local Unit5 = UC:Sector("Unit 5")
 local Unit6 = UC:Sector("Unit 6")
 
 --- Unit AOE
-local UA = Window:Category("⚔️ INF Range")
+local UA = Window:Category(" INF Range")
 
 Unit = {}
 for i = 1, 6 do
@@ -778,26 +789,26 @@ local UnitAOE = UA:Sector("INF Range Config ")
 local UnitAOE1 = UA:Sector("Check Unit ")
 --- End of Unit AOE
 
-local LG = Window:Category("🛠️ Misc [BETA]")
+local LG = Window:Category(" Misc")
 local LowCPU2 = LG:Sector("Low CPU Mode")
 local LowCPU3 = LG:Sector("")
 local LG1 = LG:Sector("Beta LAGGY Config ")
-local DELMAP = LG:Sector("🗺️ New Function 🗺️")
+local DELMAP = LG:Sector("New Function ")
 local DELMAP1 = LG:Sector(" ")
-local OtherSec = LG:Sector("⌛ Auto Load Script ⌛")
+local OtherSec = LG:Sector(" Auto Load Script ")
 local OtherSec1 = LG:Sector("")
-local OtherSec3 = LG:Sector("🐱 Hide Name Player 🐱")
+local OtherSec3 = LG:Sector(" Hide Name Player ")
 local DelMapConfig = LG:Sector("")
-local DelMapConfig2 = LG:Sector("⚙️ Other Config ⚙️")
+local DelMapConfig2 = LG:Sector(" Other Config ")
 local DelMapConfig3 = LG:Sector("")
-local reFarmConfig = LG:Sector("🤖 Reset Farm Config 🤖")
+local reFarmConfig = LG:Sector(" Reset Farm Config ")
 
-local ETC = Window:Category("🌐 Discord & Shop")
-local AutoSummonSec = ETC:Sector("💸 Auto สุ่ม Units 💸")
-local AutoSnipeMerchantSec = ETC:Sector("🏪 Auto ชื้อของร้านค้า Bulma 🏪")
-local SellPortals = ETC:Sector("🌀 Sell Portals 🌀")
+local ETC = Window:Category(" Discord & Shop")
+local AutoSummonSec = ETC:Sector(" Auto Sum Units ")
+local AutoSnipeMerchantSec = ETC:Sector(" Auto Snipe Bulma ")
+local SellPortals = ETC:Sector(" Sell Portals ")
 local devilcity1 = ETC:Sector("")
-local WebhookSec = ETC:Sector("🌐 Discord Webhook 🌐")
+local WebhookSec = ETC:Sector(" Discord Webhook ")
 local OtherSec2 = ETC:Sector("")
 
 
@@ -864,7 +875,7 @@ local function UnitSec()
         LoadUnits()
     end
     GetUnits()
-    SelectUnits:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
+    SelectUnits:Cheat("Button", " Select Units", function() --Selects Currently Equipped Units!
         Settings.SelectedUnits = {
             U1 = "nil",
             U2 = "nil",
@@ -880,7 +891,7 @@ local function UnitSec()
         local args = { [1] = string }
         game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
     end
-    local a = SelectUnits:Cheat("Dropdown", "🧙 Select Team",function(preset)
+    local a = SelectUnits:Cheat("Dropdown", " Select Team",function(preset)
         Settings.SelectedPreset = preset
         print(preset)
         saveSettings()
@@ -888,7 +899,7 @@ local function UnitSec()
         options = { "Team 1", "Team 2", "Team 3", "Team 4","Team 5" }, 
         default = Settings.SelectedPreset
     })
-    SelectUnits:Cheat("Button", "⌛ Switch Team", function() --loads preset
+    SelectUnits:Cheat("Button", " Switch Team", function() --loads preset
         preset = Settings.SelectedPreset
         if preset == "Team 1" then
             switchteam("1")
@@ -906,7 +917,7 @@ local function UnitSec()
     end)
 end
 
-SelectUnits:Cheat("Checkbox","🦸 Auto Save Unit ", function(bool)
+SelectUnits:Cheat("Checkbox"," Auto Save Unit ", function(bool)
     warn("Auto Save Unit set to " .. tostring(bool))
     Settings.AutoSaveUnit = bool
     saveSettings()
@@ -1003,7 +1014,7 @@ end
 ------------------ World Section -------------updatefix
 ----------------------------------------------
 local function WorldSec()
-    SelectWorld:Cheat("Dropdown", "🔱 Select Category",function(value)
+    SelectWorld:Cheat("Dropdown", " Select Category",function(value)
         print(value)
         Settings.WorldCategory = value
         getgenv().updateworld()
@@ -1021,7 +1032,7 @@ local function WorldSec()
         },
         default = Settings.WorldCategory
     })
-    local selectworld = SelectWorld:Cheat("Dropdown", "🌏 Select World",function(value)
+    local selectworld = SelectWorld:Cheat("Dropdown", " Select World",function(value)
         print(value)
         Settings.SelectedWorld = value
         getgenv().updatelevel()
@@ -1052,7 +1063,7 @@ local function WorldSec()
             selectworld:AddOption(storylist[i])
         end
     end
-    local selectlevel = SelectWorld:Cheat("Dropdown", "🎚️ Select Level",function(value)
+    local selectlevel = SelectWorld:Cheat("Dropdown", " Select Level",function(value)
         print(value)
         Settings.SelectedLevel = value
         getgenv().updatedifficulty()
@@ -1164,7 +1175,7 @@ local function WorldSec()
         end
     end
     --fixmap
-    local selectdiff = SelectWorld:Cheat("Dropdown", "🔫 Difficulty",function(value)
+    local selectdiff = SelectWorld:Cheat("Dropdown", " Difficulty",function(value)
         print(value, " Selected")
         Settings.Difficulty = value
         saveSettings()
@@ -1196,21 +1207,21 @@ local function WorldSec()
     end
 
     Settings.SelectedTier = Settings.SelectedTier or 0
-    local selectlevel = SelectWorld:Cheat("Dropdown", "🎚️ Portal Tier <=",function(value)
+    local selectlevel = SelectWorld:Cheat("Dropdown", " Portal Tier <=",function(value)
         print(value)
         Settings.SelectedTier = value
         saveSettings()
     end, {options = Table_Tier, default = Settings.SelectedTier})
 
     Settings.SelectedChallenge = Settings.SelectedChallenge or "double_cost"
-    local selectlevel = SelectWorld:Cheat("Dropdown", "🎚️ Din't use Challenge",function(value)
+    local selectlevel = SelectWorld:Cheat("Dropdown", " Din't use Challenge",function(value)
         Settings.SelectedChallenge = value
         saveSettings()
     end, { options = {"double_cost","short_range","fast_enemies","regen_enemies", "tank_enemies","shield_enemies","triple_cost","hyper_regen_enemies","hyper_shield_enemies",
     "godspeed_enemies","flying_enemies","mini_range"}, default =Settings.SelectedChallenge})
 
     Settings.SelectedChallenge2 = Settings.SelectedChallenge2 or "double_cost"
-    local selectlevel = SelectWorld:Cheat("Dropdown", "🎚️ Din't use Challenge ",function(value)
+    local selectlevel = SelectWorld:Cheat("Dropdown", " Din't use Challenge ",function(value)
         warn("Change to : "..value)
         Settings.SelectedChallenge2 = value
         saveSettings()
@@ -1218,14 +1229,14 @@ local function WorldSec()
     "godspeed_enemies","flying_enemies","mini_range"}, default =Settings.SelectedChallenge2})
 
     Settings.SelectedChallenge3 = Settings.SelectedChallenge3 or "double_cost"
-    local selectlevel = SelectWorld:Cheat("Dropdown", "🎚️ Din't use Challenge ",function(value)
+    local selectlevel = SelectWorld:Cheat("Dropdown", " Din't use Challenge ",function(value)
         warn("Change to : "..value)
         Settings.SelectedChallenge3 = value
         saveSettings()
     end, { options = {"double_cost","short_range","fast_enemies","regen_enemies", "tank_enemies","shield_enemies","triple_cost","hyper_regen_enemies","hyper_shield_enemies",
     "godspeed_enemies","flying_enemies","mini_range"}, default =Settings.SelectedChallenge3})
 
-    SelectWorld:Cheat("Checkbox","👬 Friends Only", function(bool)
+    SelectWorld:Cheat("Checkbox"," Friends Only", function(bool)
         print(bool)
         Settings.isFriendOnly = bool
         saveSettings()
@@ -1238,47 +1249,47 @@ end
 
 local function AutoFarmSec()
 
-    AutoFarmConfig:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Start  ", function(bool)
         print(bool)
         Settings.autostart = bool
         saveSettings()
     end,{enabled = Settings.autostart })
 
-    AutoFarmConfig:Cheat("Checkbox","👨‍🌾 Auto Place unit  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Place unit  ", function(bool)
         print(bool)
         Settings.AutoFarm = bool
         saveSettings()
     end,{enabled = Settings.AutoFarm })
 
-    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Replay ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Replay ", function(bool)
         print(bool)
         Settings.AutoReplay = bool
         saveSettings()
     end,{enabled = Settings.AutoReplay})
-    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Pick Portal [Replay] ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Pick Portal [Replay] ", function(bool)
         print(bool)
         Settings.AutoPickPortal = bool
         saveSettings()
     end,{enabled = Settings.AutoPickPortal})
-    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Next Story  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Next Story  ", function(bool)
         print(bool)
         Settings.AutoNext = bool
         saveSettings()
     end,{enabled = Settings.AutoNext})
 
-    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Leave  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Leave  ", function(bool)
         print(bool)
         Settings.AutoLeave = bool
         saveSettings()
     end,{enabled = Settings.AutoLeave})
 
-    AutoFarmConfig:Cheat("Checkbox","⭐️ Auto Upgrade Units  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Upgrade Units  ", function(bool)
         print(bool)
         Settings.AutoUpgrade = bool
         saveSettings()
     end,{enabled = Settings.AutoUpgrade})
     
-    AutoFarmConfig:Cheat("Checkbox","🔥 Auto Abilities ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Auto Abilities ", function(bool)
         print(bool)
         Settings.AutoAbilities = bool
         saveSettings()
@@ -1305,13 +1316,13 @@ local function AutoFarmSec()
         saveSettings()
     end,{enabled = Settings.EnableBuffleafaLoop})
 
-    AutoFarmConfig:Cheat("Checkbox","⭐️ Sell Units At Wave ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Sell Units At Wave ", function(bool)
         print(bool)
         Settings.AutoSell = bool
         saveSettings()
     end,{enabled = Settings.AutoSell})
 
-    AutoFarmConfig:Cheat("Checkbox","⭐️ Leave At Wave  ", function(bool)
+    AutoFarmConfig:Cheat("Checkbox"," Leave At Wave  ", function(bool)
         print(bool)
         Settings.autoQuit = bool
         saveSettings()
@@ -1328,13 +1339,13 @@ end
 ----------------------------------------------
 local function MoreFarmSec()
 
-    castleconfig:Cheat("Checkbox","🏯 Auto Next Level inf castle  ", function(bool)
+    castleconfig:Cheat("Checkbox"," Auto Next Level inf castle  ", function(bool)
         print(bool)
         Settings.AutoContinue = bool
         saveSettings()
     end,{enabled = Settings.AutoContinue })
 
-    castleconfig:Cheat("Checkbox","🏰️ Auto Infinity Castle   ", function(bool)
+    castleconfig:Cheat("Checkbox"," Auto Infinity Castle   ", function(bool)
         print(bool)
         Settings.AutoInfinityCastle = bool
         saveSettings()
@@ -1559,19 +1570,19 @@ end
 ----------------------------------------------
 local function ChallengeSec()
 
-    local challengeconfig = ChallengeConfig:Cheat("Dropdown", "🥇 Select Reward",function(value)
+    local challengeconfig = ChallengeConfig:Cheat("Dropdown", " Select Reward",function(value)
         print(value)
         Settings.SelectedReward = value
         saveSettings()
     end, { options = {"star_fruit_random","star_remnant","gems", "gold"}, default =Settings.SelectedReward})
 
-    ChallengeConfig:Cheat("Checkbox","🎯 Auto Challenge  ", function(bool)
+    ChallengeConfig:Cheat("Checkbox"," Auto Challenge  ", function(bool)
         print(bool)
         Settings.AutoChallenge = bool
         saveSettings()
     end, {enabled =Settings.AutoChallenge})
 
-    ChallengeConfig:Cheat("Checkbox","🏆 Farm Any Rewards  ", function(bool)
+    ChallengeConfig:Cheat("Checkbox"," Farm Any Rewards  ", function(bool)
         print(bool)
        Settings.AutoChallengeAll = bool
         saveSettings()
@@ -1582,7 +1593,7 @@ end
 ----------------------------------------------
 local function DELMAPNEW()
 
-    DELMAP:Cheat("Checkbox","🗺️ Delete Map 🗺️ ", function(bool)
+    DELMAP:Cheat("Checkbox"," Delete Map  ", function(bool)
         print(bool)
         Settings.deletemap = bool
         saveSettings()
@@ -2192,13 +2203,9 @@ end
 ----------------------------------------------
 local function credits()
 
-    Developers:Cheat("Label","📝 Scripted by: Arpon AG#6612 & Forever4D#0001 & HOLYSHz#3819 ")    
-    Developers:Cheat("Label","📝 Also thanks to Trapstar#7845, bytenode#9646 for the help!")    
-    Developers:Cheat("Label","📐 UI By: detourious @ v3rmillion.net")    
-    Developers:Cheat("Label","🔧 To toggle the script press \" P \"")   
-    Developers:Cheat("Button","🔗 Discord Invite", function()
-        setclipboard("https://discord.gg/CQJ4Wfvefk")
-    end)     
+    Developers:Cheat("Label"," Modded By Rou#0340")     
+    Developers:Cheat("Label"," Original By AG#6612 & Forever4D#0001 & HOLYSHz#3819")     
+    Developers:Cheat("Label"," To toggle the script press \" P \"")     
     UIUPDT:Cheat("Label"," \n \n \n \n \n \n \n \n \n \n double_cost = 'High Cost'   \n short_range = 'Short Range'   \n fast_enemies = 'Fast Enemies'  \n regen_enemies = 'Regen Enemies'  \n tank_enemies = 'Tank Enemies'  \n shield_enemies = 'Shield Enemies'  \n triple_cost = 'Triple Cost'   \n hyper_regen_enemies = 'Hyper-Regen Enemies'   \n hyper_shield_enemies = 'Steel-Plated Enemies'   \n godspeed_enemies = 'Godspeed Enemies'   \n flying_enemies = 'Flying Enemies'   \n mini_range = 'Mini-Range'  ")   
 end
 getgenv().posX = 1.5
@@ -3246,7 +3253,7 @@ function Sellportals()
         table.insert(Tier_sell,i)
     end
     Settings.SelectedSellTier = Settings.SelectedSellTier or 0
-    SellPortals:Cheat("Dropdown", "🎚️ Select Tier Portal <=",function(value)
+    SellPortals:Cheat("Dropdown", " Select Tier Portal <=",function(value)
     warn("Change to : "..value)
     Settings.SelectedSellTier = value
     saveSettings()
@@ -3254,7 +3261,7 @@ function Sellportals()
     
     
     Settings.SelectedSellChallenge = Settings.SelectedSellChallenge or "double_cost"
-    SellPortals:Cheat("Dropdown", "🎚️ Select Challenge",function(value)
+    SellPortals:Cheat("Dropdown", " Select Challenge",function(value)
     warn("Change to : "..value)
     Settings.SelectedSellChallenge = value
     saveSettings()
@@ -3868,7 +3875,7 @@ local function startfarming()
                 warn("DUNGEONS jjk_finger farming")
                 task.wait(1)
             end
-                --ดันเกะโท
+                
         elseif cata == "Dungeon" then
             if level == "jjk_raid" then
                 getgenv().door = "_lobbytemplate_event22"
@@ -3991,7 +3998,7 @@ local function startfarming()
         end
     end
 end
---end fixportal]]
+
 
 ------------------------------------
 ---- Start Auto Ability Function----
@@ -5797,7 +5804,7 @@ function FPSBOOST()
         if _G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"]) then
             if setfpscap then
                 if type(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])) == "string" or type(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])) == "number" then
-                    --setfpscap(tonumber(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
+                    setfpscap(tonumber(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
 
                     if _G.ConsoleLogs then
                         warn("FPS Capped to " .. tostring(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
@@ -7996,4 +8003,4 @@ elseif game.PlaceId ~= 8304191830 then
 end
 
 --Auto Load
---low cpu
+--Auto Save
