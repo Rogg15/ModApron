@@ -1,5 +1,5 @@
 --updatefix
-local version = "v2.0.0b31"
+local version = "v2.5.7"
 
 
 if not game:IsLoaded() then
@@ -384,14 +384,15 @@ function webhook()
                             ["value"] = "\n" ..comma_value(gold).." Gold \n"..comma_value(gems).." Gems \n"..comma_value(xp[1]).." XP \n"..trophy.." Trophy ",
                         },
                        {
+                            ["name"] ="Alts Status",
+                            ["value"] = "\nSxzR4 SummerPearls : "..tostring(comma_value(game:GetService("Players").SxzR4._stats._resourceSummerPearls.Value)).." \nflfgyhg5iwe SummerPearls : "..tostring(comma_value(game:GetService("Players").flfgyhg5iwe._stats._resourceSummerPearls.Value)).." \nfIfgyhg5iwe SummerPearls : "..tostring(comma_value(game:GetService("Players").fIfgyhg5iwe._stats._resourceSummerPearls.Value))..  "",
+                        },
+                       {
                             ["name"] ="Items Drop :",
                             ["value"] = "\n" .. TextDropLabel .. "",
                             ["inline"] = false 
-                        },
-                        {
-                            ["name"] ="Alts Status",
-                            ["value"] = "\nSxzR4 SP"..tostring(comma_value(game:GetService("Players").SxzR4._stats._resourceSummerPearls)).." \nflf SP : "..tostring(comma_value(game:GetService("Players").flfgyhg5iwe._stats._resourceSummerPearls)).." \nFiF SP : "..tostring(comma_value(game:GetService("Players").fIfgyhg5iwe._stats._resourceSummerPearls.Value))..  "",
                         }
+
                     }
                     }
             }
