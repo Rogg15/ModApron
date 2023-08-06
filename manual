@@ -4,8 +4,9 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:Invok
 
 repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
 
+if game.Players:FindFirstChild("Vi_Jack20") then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.Vi_Jack20.Character.HumanoidRootPart.CFrame
-
+end
 wait(2)
 
 local vu = game:GetService("VirtualUser")
