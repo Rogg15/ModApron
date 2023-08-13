@@ -1,5 +1,5 @@
 --updatefix
-local version = "v2.0.0b31"
+local version = "v2.0.0b31   got Jor"
 
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
@@ -8693,6 +8693,14 @@ if Settings.redeemc then
     Reedemcode()
 end
 
+
+pcall(function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
+
+end)
+
+
 pcall(function()
     local vu = game:GetService("VirtualUser")
     game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -8728,9 +8736,6 @@ if game.PlaceId == 8304191830 then
 end
 
 --End of function mute Error
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
-
 
 
 
