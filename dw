@@ -18,7 +18,7 @@ end
 
 
 
-repeat task.wait() until game:IsLoaded()
+
 
 local mt = getrawmetatable(game)
 local old = mt.__namecall
@@ -79,20 +79,6 @@ local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function(ping) 
 script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
 end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3056,7 +3042,7 @@ local function LowCPUModeT()
                 setfpscap(30)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(35)
+                setfpscap(1000)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
@@ -3734,11 +3720,11 @@ function autoload()
     pcall(function()
         local exec = tostring(identifyexecutor())
         if exec == "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
+            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
         end
     end)
 end
@@ -3748,7 +3734,7 @@ if Settings.AutoLoadScript then
 end
 
 function autoload2()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()
 end
 
 if Settings.refarmc then
@@ -6340,7 +6326,7 @@ function FPSBOOST()
                         warn("FPS Capped to " .. tostring(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
                     end
                 elseif _G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"]) == true then
-                    setfpscap(35)
+                    setfpscap(1e6)
 
                     if _G.ConsoleLogs then
                         warn("FPS Uncapped")
@@ -8784,11 +8770,19 @@ if Settings.redeemc then
 end
 
 
-pcall(function()
+
+
+if game.PlaceId == 8304191830 then
+
+else
+
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
 
-end)
+
+end
+
+
 
 
 pcall(function()
@@ -8827,9 +8821,10 @@ end
 
 --End of function mute Error
 
-
-
-
+warn("Arpon Anti-AFK Loaded!!!")
+warn("Arpon Hider Name Loaded!!!")
+warn("Arpon AA v2 Loaded!!!")
+warn("All Loaded !!!")
 
 if game.PlaceId == 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild(game.Players.LocalPlayer.Name)
@@ -8838,5 +8833,3 @@ elseif game.PlaceId ~= 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild("_terrain")
     checkInterNet()
 end
-
---fps
