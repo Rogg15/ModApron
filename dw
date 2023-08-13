@@ -1,5 +1,5 @@
 --updatefix
-local version = "v2.0.0b31   got Jor"
+local version = "v2.0.0b31"
 
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
@@ -2966,7 +2966,7 @@ local function LowCPUModeT()
                 setfpscap(30)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(1000)
+                setfpscap(35)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
@@ -3644,11 +3644,11 @@ function autoload()
     pcall(function()
         local exec = tostring(identifyexecutor())
         if exec == "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
+            queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()")
         end
     end)
 end
@@ -3658,7 +3658,7 @@ if Settings.AutoLoadScript then
 end
 
 function autoload2()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/dw"))()
 end
 
 if Settings.refarmc then
@@ -6250,7 +6250,7 @@ function FPSBOOST()
                         warn("FPS Capped to " .. tostring(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
                     end
                 elseif _G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"]) == true then
-                    setfpscap(1e6)
+                    setfpscap(35)
 
                     if _G.ConsoleLogs then
                         warn("FPS Uncapped")
@@ -8749,4 +8749,4 @@ elseif game.PlaceId ~= 8304191830 then
     checkInterNet()
 end
 
---Autoload
+--fps
