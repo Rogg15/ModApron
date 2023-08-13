@@ -14,6 +14,96 @@ else
     repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
 end
 
+
+
+
+
+repeat task.wait() until game:IsLoaded()
+
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+local protect = newcclosure or protect_function
+
+if not protect then
+    protect = function(f) return f end
+end
+setreadonly(mt, false)
+mt.__namecall = protect(function(self, ...)
+    local method = getnamecallmethod()
+    if method == "Kick" then
+        wait(9e9)
+        return
+    end
+    return old(self, ...)
+end)
+
+
+setfpscap(35)
+settings().Rendering.QualityLevel = 1	
+game.Lighting.GlobalShadows = false
+sethiddenproperty(game.Lighting, "Technology", "Compatibility")
+
+
+local ui = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("FinityUI")
+if ui then
+    ui:Destroy()
+end
+
+local ms = game:GetService("CoreGui"):FindFirstChild("Wifi")
+if ms then
+    ms:Destroy()
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+local Ping = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Name = "Wifi"
+
+Ping.Name = "Ping"
+Ping.Parent = ScreenGui
+Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ping.BackgroundTransparency = 1.000
+Ping.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Ping.Position = UDim2.new(0.1000000048, 0.3, 0.3, 0)
+Ping.Size = UDim2.new(0, 125, 0, 25)
+Ping.Font = Enum.Font.SourceSans
+Ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ping.TextScaled = true
+Ping.TextSize = 38.000
+Ping.TextWrapped = true
+
+local script = Instance.new('LocalScript', Ping)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(ping) 
+script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ------------------------------
 local a = 'V2_Anime_Adventures' -- 
 local b = game:GetService('Players').LocalPlayer.Name .. '_AnimeAdventures.json' 
