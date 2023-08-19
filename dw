@@ -3039,11 +3039,9 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(30)
-                game:GetService("RunService"):Set3dRenderingEnabled(false)
+                setfpscap(20)
             else
-                setfpscap(1000)
-                game:GetService("RunService"):Set3dRenderingEnabled(true)
+                setfpscap(32)
             end
         end
     end)
@@ -8833,3 +8831,4 @@ elseif game.PlaceId ~= 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild("_terrain")
     checkInterNet()
 end
+--fps
