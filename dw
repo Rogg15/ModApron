@@ -20,6 +20,8 @@ end
 
 
 
+
+
 local mt = getrawmetatable(game)
 local old = mt.__namecall
 local protect = newcclosure or protect_function
@@ -38,11 +40,12 @@ mt.__namecall = protect(function(self, ...)
 end)
 
 
-setfpscap(35)
-settings().Rendering.QualityLevel = 1	
-game.Lighting.GlobalShadows = false
-sethiddenproperty(game.Lighting, "Technology", "Compatibility")
-
+if game.PlaceId == 8304191830 then
+else
+    settings().Rendering.QualityLevel = 1	
+    game.Lighting.GlobalShadows = false
+    sethiddenproperty(game.Lighting, "Technology", "Compatibility")
+end
 
 local ui = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("FinityUI")
 if ui then
@@ -79,15 +82,6 @@ local RunService = game:GetService("RunService")
 RunService.RenderStepped:Connect(function(ping) 
 script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
 end)
-
-
-
-
-
-
-
-
-
 
 
 ------------------------------
@@ -3039,9 +3033,11 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(20)
+                setfpscap(30)
+                --game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(32)
+                setfpscap(1000)
+                --game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
     end)
@@ -3718,11 +3714,11 @@ function autoload()
     pcall(function()
         local exec = tostring(identifyexecutor())
         if exec == "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
+            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
         end
     end)
 end
@@ -3732,7 +3728,7 @@ if Settings.AutoLoadScript then
 end
 
 function autoload2()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Rogg15/ModApron/main/dw'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()
 end
 
 if Settings.refarmc then
@@ -8768,20 +8764,17 @@ if Settings.redeemc then
 end
 
 
+
+
 if game.Players.LocalPlayer.UserId == 1821780137 then
-
-
 else
-
 if game.PlaceId == 8304191830 then
-
 else
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Rogg15/ModApron/main/manual"))()
 end
-
-
-
 end
+
+
 
 
 
@@ -8833,4 +8826,5 @@ elseif game.PlaceId ~= 8304191830 then
     repeat task.wait(0.5) until Workspace:WaitForChild("_terrain")
     checkInterNet()
 end
+
 --fps
