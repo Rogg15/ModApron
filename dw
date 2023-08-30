@@ -8774,7 +8774,7 @@ end
 
 
 
-if game.Players.LocalPlayer.UserId == 1821780137 or game.Players.LocalPlayer.UserId == 3761928060 then
+if game.Players.LocalPlayer.UserId == 1821780137 or game.Players.LocalPlayer.UserId == 3761928060 or game.Players.LocalPlayer.UserId == 1088310350 then
 else
 if game.PlaceId == 8304191830 then
 else
