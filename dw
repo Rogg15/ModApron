@@ -14,16 +14,7 @@ else
     repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
 end
 
---[[
-if game.PlaceId == 8304191830 then
-if game.Players.LocalPlayer.UserId == 1821780137 then 
 
-else
-	game.Players.LocalPlayer:Kick("Auto")
-end
-
-end
-]]
 ------------------------------
 local a = 'V2_Anime_Adventures' -- 
 local b = game:GetService('Players').LocalPlayer.Name .. '_AnimeAdventures.json' 
